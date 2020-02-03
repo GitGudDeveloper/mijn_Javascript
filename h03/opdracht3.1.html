@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>opdracht 3.1</title>
+    <style>
+        html {
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border: 0px;
+        }
+        #pics {
+            width: 900px;
+            height: 900px;
+            border: 1px solid black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>CatShuffle</h1>
+<div id="pics">
+    <img src="cat_1.jpg" alt="Bengaalse Tijger">
+    <img src="cat_2.jpg" alt="Panter">
+    <img src="cat_3.jpg" alt="luipaard">
+    <img src="cat_4.jpg" alt="Jachtluipaard">
+    <img src="cat_5.jpg" alt="Witte Bengaalse Tijger">
+    <img src="cat_6.jpg" alt="Leeuw">
+    <img src="cat_7.jpg" alt="Linx">
+    <img src="cat_8.jpg" alt="Jaguar">
+    <img src="cat_9.jpg" alt="Poema">
+</div>
+
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+    var randomnummers = [];
+    while (randomnummers.length <9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomnummers.lastIndexOf(random) == -1)
+        randomnummers.push(random);
+    }
+    random = 0;
+    for (var plaatje in plaatjes) {
+        plaatjes[plaatje].src = "cat_" + randomnummers[random] + ".jpg"
+        random++;
+    }
+</script>
+</body>
+</html>

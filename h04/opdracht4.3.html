@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>opdracht 4.3</title>
+    <style>
+        #slideholder_1 {
+            width: 429px;
+            height: 193px;
+            margin: auto;
+        }
+        #slideholder_2 {
+            width: 188px;
+            height: 215px;
+            margin: auto;
+        }
+        #slideholder_3 {
+            width: 572px;
+            height: 230px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder_1">
+
+</div>
+<div id="slideholder_2">
+
+</div>
+<div id="slideholder_3">
+
+</div>
+
+
+<script>
+    var plaatjes = [1,2,3,4];
+    var teller = 0;
+    var slideholder_1 = document.getElementById("slideholder_1");
+    var slideholder_2 = document.getElementById("slideholder_2");
+    var slideholder_3 = document.getElementById("slideholder_3");
+    //de ogen
+    slideholder_1.style.backgroundImage = "url(crook-eyes_4.jpg)";
+
+    slideholder_1.addEventListener("click", function () {
+        slideholder_1.style.backgroundImage = "url(crook-eyes_" + geteyes() +".jpg)";
+
+    });
+
+    function geteyes() {
+        if (teller >= plaatjes.length) {
+            teller = 1;
+        } else {
+            teller++
+        }
+        console.log(teller);
+        return teller;
+
+    }
+    //de neus
+    slideholder_2.style.backgroundImage = "url(crook-neus_4.jpg)";
+
+    slideholder_2.addEventListener("click", function () {
+        slideholder_2.style.backgroundImage = "url(crook-neus_" + getneus() +".jpg)";
+
+    });
+
+    function getneus() {
+        if (teller >= plaatjes.length) {
+            teller = 1;
+        } else {
+            teller++
+        }
+        console.log(teller);
+        return teller;
+
+    }
+    //de mond
+    slideholder_3.style.backgroundImage = "url(crook-mond_4.jpg)";
+
+    slideholder_3.addEventListener("click", function () {
+        slideholder_3.style.backgroundImage = "url(crook-mond_" + getmond() +".jpg)";
+
+    });
+
+    function getmond() {
+        if (teller >= plaatjes.length) {
+            teller = 1;
+        } else {
+            teller++
+        }
+        console.log(teller);
+        return teller;
+
+    }
+</script>
+</body>
+</html>

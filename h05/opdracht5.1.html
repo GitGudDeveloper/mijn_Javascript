@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>opdracht 5.1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div#catlist {
+            width: 900px;
+            height: 1350px;
+            border: solid 1px black;
+            margin: auto;
+            font-size: 0px;
+        }
+        div.cat_1 {
+            height: 450px;
+            width: 300px;
+            float: left;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>cat chooser</h1>
+<h3>choose your favourite kitten</h3>
+
+
+<div id="catlist">
+
+    <img src="../h03/cat_1.jpg" alt="">
+    <img src="../h03/cat_2.jpg" alt="">
+    <img src="../h03/cat_3.jpg" alt="">
+    <img src="../h03/cat_4.jpg" alt="">
+    <img src="../h03/cat_5.jpg" alt="">
+    <img src="../h03/cat_6.jpg" alt="">
+    <img src="../h03/cat_7.jpg" alt="">
+    <img src="../h03/cat_8.jpg" alt="">
+    <img src="../h03/cat_9.jpg" alt="">
+</div>
+
+
+
+<script>
+    catlist = document.getElementById("catlist");
+for (var i = 0; i < 9; i++)
+    pictureholder = document.createElement("div");
+    pictureholder.className = "cat_1";
+    pictureholder.id = "picture-holder" + i;
+    catlist.appendChild(pictureholder);
+
+</script>
+</body>
+</html>
