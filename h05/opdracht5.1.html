@@ -7,19 +7,26 @@
         body {
             text-align: center;
         }
-
+        div.picture-holder {
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float: left;
+            border: solid 1px black;
+        }
+        div.favoriet {
+            width: 300px;
+            height: 150px;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         div#catlist {
             width: 900px;
             height: 1350px;
             border: solid 1px black;
             margin: auto;
             font-size: 0px;
-        }
-        div.cat_1 {
-            height: 450px;
-            width: 300px;
-            float: left;
-            background-color: red;
         }
     </style>
 </head>
@@ -30,26 +37,49 @@
 
 <div id="catlist">
 
-    <img src="../h03/cat_1.jpg" alt="">
-    <img src="../h03/cat_2.jpg" alt="">
-    <img src="../h03/cat_3.jpg" alt="">
-    <img src="../h03/cat_4.jpg" alt="">
-    <img src="../h03/cat_5.jpg" alt="">
-    <img src="../h03/cat_6.jpg" alt="">
-    <img src="../h03/cat_7.jpg" alt="">
-    <img src="../h03/cat_8.jpg" alt="">
-    <img src="../h03/cat_9.jpg" alt="">
 </div>
 
 
 
 <script>
     catlist = document.getElementById("catlist");
-for (var i = 0; i < 9; i++)
-    pictureholder = document.createElement("div");
-    pictureholder.className = "cat_1";
-    pictureholder.id = "picture-holder" + i;
-    catlist.appendChild(pictureholder);
+    createspicholders();
+    creatCatImages();
+
+    function createspicholders () {
+        for (var i = 0; i < 9; i++) {
+            pictureHolder = document.createElement("div");
+            pictureHolder.className = "picture-holder";
+            pictureHolder.id = "picture-holder-" + i;
+            catlist.appendChild(pictureHolder);
+        }
+    }
+    function creatCatImages() {
+pictureHolder = document.getElementsByClassName("picture-holder");
+for (var i = 0; i < pictureHolder.length; i++) {
+    favoriet = document.createElement("div");
+    favoriet.className = "favoriet";
+    favoriet.id = "favoriet_" + (i+1);
+    catplaatje = document.createElement("img");
+    catplaatje.src = "../h03/cat_" + (i+1) + ".jpg";
+    catplaatje.id = (i+1);
+    catplaatje.addEventListener("click", function () {
+        Like(this.id);
+    });
+    pictureHolder[i].appendChild(favoriet);
+    pictureHolder[i].appendChild(catplaatje);
+}
+function Like(id) {
+console.log ("cat" + id);
+nietmijnfavoriet = document.getElementsByClassName("favoriet");
+
+for (var i = 0; i < nietmijnfavoriet.length; i++) {
+    nietmijnfavoriet[i].style.backgroundImage = "none";
+}
+
+favoriet = document.getElementById("favoriet_" + id);
+favoriet.style.backgroundImage = "url('hart.png')";
+}}
 
 </script>
 </body>
